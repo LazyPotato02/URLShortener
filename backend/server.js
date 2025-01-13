@@ -11,7 +11,7 @@ const mongoDB = process.env.MONGODB_URI || 'mongodb://10.70.71.110:27017/url-sho
 const allowedOrigins = ['http://localhost:4200']
 
 app.use(express.json());
-
+app.use(express.urlencoded({ extended: true }));
 app.use(helmet());
 
 app.use(cors({
