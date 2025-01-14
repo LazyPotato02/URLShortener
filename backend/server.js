@@ -3,6 +3,7 @@ const helmet = require("helmet");
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const shortenerRouter = require("./routes/shortener");
 const app = express()
 
 
@@ -36,7 +37,7 @@ mongoose.connect(mongoDB, {})
         console.error('Database connection error:', error);
     });
 
-
+app.use('/shortener', shortenerRouter);
 app.listen(port, () => {
     console.log('Server started on port ' + port);
 });
