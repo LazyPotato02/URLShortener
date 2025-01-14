@@ -19,7 +19,8 @@
 
         <div class="shortened-url" *ngIf="shortenedUrl">
             <p>Your shortened URL:</p>
-            <a [routerLink]="['/short', shortenedUrl._id]">{{ shortenedUrl._id }}</a>
+            <a [routerLink]="['/short', shortenedUrl._id]">Shortened Link </a>
+            <button class="copy-btn" (click)="copyToClipboard(shortenedUrl._id)">Copy to Clipboard</button>
         </div>
     </main>
 

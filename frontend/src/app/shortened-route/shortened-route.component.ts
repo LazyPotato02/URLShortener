@@ -1,26 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import {ShortenerService} from '../services/shortener.service';
+
 
 @Component({
     selector: 'app-shortened-route',
-    template: `
-        <div>
-            <h1>Shortened Route</h1>
-            <p>The ID from the URL is: {{ id }}</p>
-        </div>
-    `,
+    templateUrl: './shortened-route.component.html',
+    styleUrls: ['./shortened-route.component.css'],
     standalone: true,
 })
 export class ShortenedRouteComponent implements OnInit {
     id!: string;
 
-    constructor(private route: ActivatedRoute) {}
+    constructor(private route: ActivatedRoute, private shortenerService: ShortenerService) {}
 
     ngOnInit(): void {
-        // Retrieve the 'id' from the route parameters
         this.route.params.subscribe(params => {
             this.id = params['id'];
-            console.log('ID from URL:', this.id);
+            this.shortenerService.getShortenedUrl(this.id).subscribe(
+                (data: any) => {
+                    window.location.href = data.url;
+                }
+            );
         });
     }
 }

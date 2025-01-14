@@ -34,4 +34,15 @@ export class HomeComponent {
         );
 
     }
+    copyToClipboard(text: string) {
+        navigator.clipboard.writeText(`http://localhost:4200/short/${text}`).then(
+            () => {
+                console.log('Copied to clipboard:', text);
+                alert('Shortened URL copied to clipboard!');
+            },
+            error => {
+                console.error('Error copying to clipboard:', error);
+            }
+        );
+    }
 }
