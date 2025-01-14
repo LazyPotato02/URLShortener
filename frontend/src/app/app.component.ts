@@ -1,21 +1,16 @@
 import {Component} from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {NgIf} from '@angular/common';
+import {RouterOutlet} from '@angular/router';
 
 
 @Component({
     selector: 'app-root',
-    imports: [FormsModule, NgIf],
+    imports: [
+        RouterOutlet
+    ],
+    standalone:true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
 })
 export class AppComponent {
-    shortenedUrl: any;
-    url: string | null = null;
 
-    shortenUrl() {
-        console.log(this.url)
-
-
-    }
 }

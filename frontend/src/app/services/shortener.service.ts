@@ -2,10 +2,10 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
 @Injectable({
-    providedIn: 'root'
+    providedIn: 'root',
 })
 export class ShortenerService {
-    apiUrl: string = 'http://localhost:3000/shortener';
+    private apiUrl: string = 'http://localhost:3000/shortener';
 
 
     constructor(

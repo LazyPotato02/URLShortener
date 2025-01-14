@@ -1,0 +1,29 @@
+<div class="container">
+    <header class="header">
+        <h1 class="app-title">URL Shortener</h1>
+        <p class="app-description">Simplify your links with ease!</p>
+    </header>
+
+    <main class="main-content">
+        <form class="url-form" (ngSubmit)="shortenUrl()">
+            <input
+                type="url"
+                name="url"
+                class="url-input"
+                placeholder="Enter your URL here..."
+                [(ngModel)]="url"
+                required
+            >
+            <button type="submit" class="shorten-btn">Shorten</button>
+        </form>
+
+        <div class="shortened-url" *ngIf="shortenedUrl">
+            <p>Your shortened URL:</p>
+            <a [routerLink]="['/short', shortenedUrl._id]">{{ shortenedUrl._id }}</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 URL Shortener. All rights reserved.</p>
+    </footer>
+</div>

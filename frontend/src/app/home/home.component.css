@@ -1,0 +1,92 @@
+/* styles.css */
+
+
+.container {
+    text-align: center;
+    padding: 20px;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 600px;
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.app-title {
+    font-size: 3.5rem;
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+
+.app-description {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.main-content {
+    margin: 20px 0;
+}
+
+.url-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.url-input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.url-input:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.shorten-btn {
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.shorten-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.shortened-url {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #007BFF;
+}
+
+.shortened-url a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.shortened-url a:hover {
+    color: #0056b3;
+}
+
+.footer {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #aaa;
+}
