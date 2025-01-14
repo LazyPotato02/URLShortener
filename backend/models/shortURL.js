@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const {customAlphabet} = require("nanoid");
 
-const generateId = customAlphabet('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz', 8);
+const generateId = customAlphabet('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz', 10);
 
 const shortenerSchema = mongoose.Schema({
     id: {type: String, required: true},
